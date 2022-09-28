@@ -1,8 +1,9 @@
 <div class="footer">
 
-    <h3 class="footer_title">Navigate</h3>
+    <h2 class="footer_h2">Navigate</h2>
     <?php wp_nav_menu(array('theme_location' => 'footer_menu')); ?>
 
+    <h1 class="footer_title"><?php echo get_bloginfo( 'name' ); ?></h1>
 </div>
 
 <?php
