@@ -16,6 +16,4 @@ if (have_posts()) {
     echo '<p>Sorry no results where found</p>';
 }
 
-
-
 get_footer();
