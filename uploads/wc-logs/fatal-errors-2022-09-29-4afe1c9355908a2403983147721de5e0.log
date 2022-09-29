@@ -1,0 +1,2 @@
+2022-09-29T11:01:21+00:00 CRITICAL require_once(): Failed opening required 'C:\wamp64\uppgiften\grupparbete\wp-content\plugins\forminator\addons\pro\gutenberg/library/class-forminator-gfblock-abstract.php' (include_path='.;C:\php\pear') in C:\wamp64\uppgiften\grupparbete\wp-content\plugins\forminator\addons\pro\gutenberg\gutenberg.php on line 44
+
