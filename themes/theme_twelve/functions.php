@@ -1,6 +1,6 @@
 <?php
 
-// enable stylesheets 
+// Enable stylesheets 
 
 function my_theme_enqueue_styles()
 {
@@ -8,34 +8,36 @@ function my_theme_enqueue_styles()
 }
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles', 11);
 
-// support img
+// Img/Tumbnail support
 
 add_theme_support('post-thumbnails');
 
 
 
-// register menu
+// Register menus
 
 register_nav_menus(array(
   'main_menu' => 'Main Menu',
   'footer_menu' => 'Footer Menu'
 ));
 
-// enable use of custom logo in theme 
+// Enable use of custom logo in theme 
 
 add_theme_support('custom-logo');
 
 // Adding Google Fonts 
 
-function wpb_add_google_fonts() {
- 
-  wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300&display=swap', false ); 
-  }
-   
-  add_action( 'wp_enqueue_scripts', 'wpb_add_google_fonts' );
-  
-// ACF block
+function wpb_add_google_fonts()
+{
+
+  wp_enqueue_style('wpb-google-fonts', 'https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300&display=swap', false);
+}
+
+add_action('wp_enqueue_scripts', 'wpb_add_google_fonts');
+
+
+// Adding ACF block
 
 add_action('acf/init', 'my_acf_init_block_type');
 function my_acf_init_block_type()
@@ -55,7 +57,7 @@ function my_acf_init_block_type()
 }
 
 
-// adding woocommerce support including default info img size and product grid
+// Adding woocommerce support including default info img size and product grid
 
 function mytheme_add_woocommerce_support()
 {
