@@ -1,7 +1,10 @@
 <?php
 get_header();
 ?>
-front-page.php 
+
+<hr>
+front page
+<hr>
 
 
 <?php
