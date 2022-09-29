@@ -21,22 +21,34 @@ Version: 1.0
 }
  */
 
-body{
-  color: hotpink;
-}
+ * {
+  font-family: 'Inter Tight', sans-serif;
+ }
+
+
 .footer{
   
-  color: blue;!important
+  background-color: green;
 }
 
-.menu-footer-container{
+div.menu-footer-container ul {
+  margin:20px 0px 20px 0px;
+  list-style-type: none;
   list-style: none;
   text-decoration: none;
-  margin: 0;
-  padding: 0;
+  list-style-image: none;
+  display:flex;   
+  flex-direction: column-reverse;
 }
+div.menu-footer-container li a{
+  padding: 0px 20px 0px 0px;
+  display: inline-block;
+  text-decoration: none;
+  flex-wrap: nowrap;
+  line-height: 5px;
+} 
 
-.footer_title{
-  color: brown;
+div.custom-menu-class a { 
+  color:#000;
 }
 

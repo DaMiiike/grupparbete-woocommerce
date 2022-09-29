@@ -7,6 +7,7 @@ function my_theme_enqueue_styles()
   wp_enqueue_style('style', get_stylesheet_uri());
 }
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles', 11);
+
 // support img
 
 add_theme_support('post-thumbnails');
@@ -24,6 +25,16 @@ register_nav_menus(array(
 
 add_theme_support('custom-logo');
 
+// Adding Google Fonts 
+
+function wpb_add_google_fonts() {
+ 
+  wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300&display=swap', false ); 
+  }
+   
+  add_action( 'wp_enqueue_scripts', 'wpb_add_google_fonts' );
+  
 // ACF block
 
 add_action('acf/init', 'my_acf_init_block_type');
