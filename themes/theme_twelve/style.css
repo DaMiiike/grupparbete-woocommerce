@@ -1,0 +1,42 @@
+/*
+Theme Name: Tema 12
+Theme URI: https://github.com/DaMiiike/grupparbete-woocommerce
+Author: Anna, Moises & Michael
+Version: 1.0
+*/
+
+/* .posts {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;  
+  gap: 20px;
+}
+
+.post-block {
+  border: 1px solid #000;
+  background: #ccc;
+  border-radius: 20px;
+  padding: 20px;
+}
+ */
+
+body{
+  color: hotpink;
+}
+.footer{
+  
+  color: blue;!important
+}
+
+.menu-footer-container{
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer_title{
+  color: brown;
+}
+
