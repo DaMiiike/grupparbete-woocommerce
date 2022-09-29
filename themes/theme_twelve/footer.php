@@ -8,6 +8,7 @@
 
 <?php
 
+this footer
 wp_footer(); ?>
 
 </body>
