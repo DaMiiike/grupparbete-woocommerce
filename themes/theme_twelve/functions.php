@@ -18,7 +18,8 @@ add_theme_support('post-thumbnails');
 
 register_nav_menus(array(
   'main_menu' => 'Main Menu',
-  'footer_menu' => 'Footer Menu'
+  'footer_menu' => 'Footer Menu',
+  'footer_menu_two' => 'Secondary Footer Menu'
 ));
 
 // Enable use of custom logo in theme 

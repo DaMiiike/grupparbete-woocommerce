@@ -4,19 +4,22 @@
 
     <?php wp_nav_menu(array('theme_location' => 'footer_menu')); ?>
 
-    <h1 class="footer_title"><?php echo get_bloginfo('name'); ?></h1>
+
 </div>
 
-<div>
-    <h2>Information</h2>
-    <l</li>
-    <li></li>
-    <li></li>
+<div class="footer-menu-two">
+
+    <h2 class="footer_h2_two">Information</h2>
+
+    <?php wp_nav_menu(array('theme_location' => 'footer_menu_two')); ?>
+
 </div>
+
+<h1 class="footer_title"><?php echo get_bloginfo('name'); ?></h1>
 
 <?php
-
-wp_footer(); ?>
+wp_footer(); 
+?>
 
 </body>
 
