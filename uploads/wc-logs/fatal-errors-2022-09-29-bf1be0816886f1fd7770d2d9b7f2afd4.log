@@ -2,3 +2,9 @@
 
 2022-09-29T11:27:12+00:00 CRITICAL syntax error, unexpected '<', expecting end of file in /Users/annas/Desktop/grupparbete/wp-content/themes/theme_twelve/functions.php on line 30
 
+2022-09-29T14:02:49+00:00 CRITICAL Cannot redeclare my_acf_init_block_type() (previously declared in /Users/annas/Desktop/grupparbete/wp-content/themes/theme_twelve/functions.php:48) in /Users/annas/Desktop/grupparbete/wp-content/themes/theme_twelve/functions.php on line 62
+
+2022-09-29T14:02:50+00:00 CRITICAL Cannot redeclare my_acf_init_block_type() (previously declared in /Users/annas/Desktop/grupparbete/wp-content/themes/theme_twelve/functions.php:48) in /Users/annas/Desktop/grupparbete/wp-content/themes/theme_twelve/functions.php on line 62
+
+2022-09-29T14:03:26+00:00 CRITICAL Cannot redeclare my_acf_init_block_type() (previously declared in /Users/annas/Desktop/grupparbete/wp-content/themes/theme_twelve/functions.php:48) in /Users/annas/Desktop/grupparbete/wp-content/themes/theme_twelve/functions.php on line 62
+

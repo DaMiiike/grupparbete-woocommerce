@@ -2,11 +2,8 @@
 
 <div class="the-hero-block">
 
-    <div class="hero-block-content">
 
-        <h1><?php the_field('heading') ?></h1>
-
-    </div>
+    <h1><?php the_field('heading') ?></h1>
 
     <?php
     $image = get_field('image');
@@ -17,5 +14,6 @@
     }
 
     ?>
+
 
 </div>

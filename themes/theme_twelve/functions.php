@@ -40,6 +40,7 @@ add_action('wp_enqueue_scripts', 'wpb_add_google_fonts');
 
 // Adding ACF block
 
+
 add_action('acf/init', 'my_acf_init_block_type');
 function my_acf_init_block_type()
 {
@@ -54,8 +55,17 @@ function my_acf_init_block_type()
       'category'          => 'formatting',
       'keywords'          => array('hero'),
     ));
+    
+    acf_register_block_type(array(
+      'name'              => 'read more',
+      'title'             => __('Read more'),
+      'description'       => __('Image and text block with button to read more.'),
+      'render_template'   => 'template-parts/blocks/read-more.php',
+      'category'          => 'formatting',
+      'keywords'          => array('readmore'),
+    ));
   }
-}
+};
 
 
 // Adding woocommerce support including default info img size and product grid
