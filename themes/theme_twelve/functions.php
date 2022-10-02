@@ -110,3 +110,34 @@ function create_posttype()
 // Hooking up our function to theme setup
 add_action('init', 'create_posttype');
  
+// Register Custom Post Type
+function custom_post_type() {
+
+	$labels = array(
+		'name'                  => _x( 'Stores', 'Post Type General Name', 'text_domain' ),
+		'singular_name'         => _x( 'Store', 'Post Type Singular Name', 'text_domain' ),
+  );
+	$args = array(
+		'label'                 => __( 'Store', 'text_domain' ),
+		'description'           => __( 'Post Type Description', 'text_domain' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'editor', 'thumbnail', 'page-attributes' ),
+		'taxonomies'            => array( 'category', 'post_tag' ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'menu_icon'             => 'dashicons-cart',
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => true,
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'page',
+	);
+	register_post_type( 'stores', $args );
+
+}
+add_action( 'init', 'custom_post_type', 0 );
