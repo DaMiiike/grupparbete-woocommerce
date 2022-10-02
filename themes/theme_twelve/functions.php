@@ -55,7 +55,7 @@ function my_acf_init_block_type()
       'category'          => 'formatting',
       'keywords'          => array('hero'),
     ));
-    
+
     acf_register_block_type(array(
       'name'              => 'read more',
       'title'             => __('Read more'),
@@ -87,3 +87,5 @@ function mytheme_add_woocommerce_support()
   ));
 }
 add_action('after_setup_theme', 'mytheme_add_woocommerce_support');
+
+
