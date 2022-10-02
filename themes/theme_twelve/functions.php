@@ -64,6 +64,15 @@ function my_acf_init_block_type()
       'category'          => 'formatting',
       'keywords'          => array('readmore'),
     ));
+
+    acf_register_block_type(array(
+      'name'              => 'stores',
+      'title'             => __('Stores'),
+      'description'       => __('Custom block to display stores'),
+      'render_template'   => 'template-parts/blocks/stores.php',
+      'category'          => 'formatting',
+      'keywords'          => array('readmore'),
+    ));
   }
 };
 
