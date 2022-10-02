@@ -89,3 +89,24 @@ function mytheme_add_woocommerce_support()
 add_action('after_setup_theme', 'mytheme_add_woocommerce_support');
 
 
+// Register new post type - Stores 
+
+function create_posttype()
+{
+  register_post_type(
+    'stores',
+    // CPT Options
+    array(
+      'labels' => array(
+        'name' => __('Stores'),
+        'singular_name' => __('Store')
+      ),
+      'public' => true,
+      'has_archive' => false,
+      'rewrite' => array('slug' => 'stores'),
+    )
+  );
+}
+// Hooking up our function to theme setup
+add_action('init', 'create_posttype');
+ 
