@@ -9,7 +9,8 @@
     </div>
 
     <?php
-    $image = get_field('image');
+    $image = get_field('hero_image');
+
 
     if ($image) {
         $image_id = $image['id'];

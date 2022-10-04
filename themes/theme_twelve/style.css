@@ -62,11 +62,6 @@ ul#menu-main-menu.menu{
 
 /* /Styling navbar */
 
-.footer{
-  
-  color: blue;!important
-}
-
 
 /* Styling Footer  */
 
@@ -125,13 +120,11 @@ div.footer-menu-two ul {
 .the-hero-block {
 	position: relative;
 	left: 0;
-	width: 100vw;
-	height: 300px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	overflow: hidden;
-  background-color: plum;
+
 }
 
 .the-hero-block img {

@@ -71,7 +71,25 @@ function my_acf_init_block_type()
       'description'       => __('Custom block to display stores'),
       'render_template'   => 'template-parts/blocks/stores.php',
       'category'          => 'formatting',
-      'keywords'          => array('readmore'),
+      'keywords'          => array('stores'),
+    ));
+
+    acf_register_block_type(array(
+      'name'              => 'news heading',
+      'title'             => __('News heading'),
+      'description'       => __('Small custom block for heading with text area '),
+      'render_template'   => 'template-parts/blocks/news-heading.php',
+      'category'          => 'formatting',
+      'keywords'          => array('news heading'),
+    ));
+
+    acf_register_block_type(array(
+      'name'              => 'enviroment link',
+      'title'             => __('Enviroment link'),
+      'description'       => __('Link to how we work for the enviroment'),
+      'render_template'   => 'template-parts/blocks/enviroment-link.php',
+      'category'          => 'formatting',
+      'keywords'          => array('enviroment link'),
     ));
   }
 };
