@@ -27,13 +27,20 @@ Version: 1.0
 
 /* Styling navbar */
 
-.menu-main-menu-container{
+.top-navbar{
+  /* position: absolute;
+  float: right; */
   display: flex;
   flex-direction: row;
+}
+
+.menu-main-menu-container{
   width: 100%;
   padding: 0;
   margin: 0;
   color: red;
+  
+
 }
 
  ul#menu-main-menu.menu{
