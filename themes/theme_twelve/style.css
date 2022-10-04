@@ -24,6 +24,34 @@ Version: 1.0
 body{
   color: hotpink;
 }
+
+/* Styling navbar */
+
+.menu-main-menu-container{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+ ul#menu-main-menu.menu{
+  display: flex;
+  flex-direction: row;
+}
+
+ul#menu-main-menu.menu a {
+  text-decoration: none;
+  padding-right: 40px;
+}
+
+ul#menu-main-menu.menu{
+  list-style-type: none;
+}
+
+
+/* /Styling navbar */
+
 .footer{
   
   color: blue;!important

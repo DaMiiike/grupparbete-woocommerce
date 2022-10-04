@@ -7,6 +7,7 @@
   <?php wp_head(); ?>
   
   <?php wp_nav_menu( array('theme_location' => 'main_menu')); ?>
+  
 </head>
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
