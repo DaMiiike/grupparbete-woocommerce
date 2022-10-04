@@ -23,7 +23,49 @@ Version: 1.0
 
  * {
   font-family: 'Inter Tight', sans-serif;
+  padding: 0;
+  margin: 0;
  }
+
+/* Styling navbar */
+
+.top-navbar{
+  /*position: absolute;
+  float: right; */ /* Use when hero is visible*/ 
+  display: flex;
+  flex-direction: row;
+  padding:  20px ;
+}
+
+.menu-main-menu-container{
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  
+
+}
+
+ ul#menu-main-menu.menu{
+  display: flex;
+  flex-direction: row;
+}
+
+ul#menu-main-menu.menu a {
+  text-decoration: none;
+  padding-right: 40px;
+}
+
+ul#menu-main-menu.menu{
+  list-style-type: none;
+}
+
+
+/* /Styling navbar */
+
+.footer{
+  
+  color: blue;!important
+}
 
 
 /* Styling Footer  */
