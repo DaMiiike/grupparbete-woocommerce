@@ -3,7 +3,7 @@ Koden nedanför ska användas för att visa link, ej kodat färdigt denna sida
 
 <div class="read-more-heading">
 
-<?php the_field('sub-heading') ?> 
+<?php the_field('sub_heading') ?> 
 
 </div>
 <?php 

@@ -23,6 +23,8 @@ Version: 1.0
 
  * {
   font-family: 'Inter Tight', sans-serif;
+  padding: 0;
+  margin: 0;
  }
 
 
@@ -83,13 +85,11 @@ div.footer-menu-two ul {
 .the-hero-block {
 	position: relative;
 	left: 0;
-	width: 100vw;
-	height: 300px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	overflow: hidden;
-  background-color: plum;
+
 }
 
 .the-hero-block img {
