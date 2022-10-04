@@ -1,19 +1,22 @@
 <?php
 
-get_header();
+get_header(); 
 
-if (have_posts()) {
+
+if (have_posts()) :
 ?>
-    <h3>Search results:</h3>
+   
+   Sökresultat:
 
+    <?php while (have_posts()) : the_post(); ?>
+
+        <?php get_template_part('template-parts/posts-block'); ?>
+    
+    <?php endwhile; ?>
+
+        
 <?php
-    while (have_posts()) {
 
-        // Här kan ex. templatepart läggas in för att visa resultat.
+endif; 
 
-    }
-} else {
-    echo '<p>Sorry no results where found</p>';
-}
-
-get_footer();
+get_footer(); ?>

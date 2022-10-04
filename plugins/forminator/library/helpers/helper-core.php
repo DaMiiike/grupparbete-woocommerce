@@ -978,7 +978,7 @@ function forminator_var_type_cast( $var, $type ) {
  */
 function forminator_get_poll_chart_colors( $poll_id = null, $accessibility_enabled = false ) {
 
-	$chart_colors = $accessibility_enabled ? 
+	$chart_colors = $accessibility_enabled ?
 		array(
 			'rgba(137, 137, 137, 0.2)', // Monochrome Blue
 			'rgba(149, 149, 149, 0.2)', // Monochrome Red
@@ -1460,51 +1460,35 @@ function forminator_get_link( $link_for, $campaign = '', $adv_path = '' ) {
 /**
  * Check if the plugin is active network wide.
  *
- * @since 1.13
+ * @since 1.13 forminator_membership_status
+ * @since 1.18.2 Change how membership is detected
  *
  * @return bool
  */
-function forminator_membership_status() {
-	static $status = null;
-
-	// Get the status.
-	if ( is_null( $status ) ) {
-		// Dashboard is active.
-		if ( class_exists( 'WPMUDEV_Dashboard' ) && ! empty( WPMUDEV_Dashboard::$api )
-				&& ( method_exists( WPMUDEV_Dashboard::$api, 'get_membership_type' )
-				|| method_exists( WPMUDEV_Dashboard::$api, 'get_membership_status' ) )
-				&& method_exists( WPMUDEV_Dashboard::$api, 'get_membership_projects' )
-				&& method_exists( WPMUDEV_Dashboard::$api, 'has_key' )
-				) {
-			// Get membership type.
-			if ( method_exists( WPMUDEV_Dashboard::$api, 'get_membership_status' ) ) {
-				$status = WPMUDEV_Dashboard::$api->get_membership_status();
-			} elseif ( method_exists( WPMUDEV_Dashboard::$api, 'get_membership_type' ) ) {
-				$status = WPMUDEV_Dashboard::$api->get_membership_type();
-			}
-			// Get available projects.
-			$projects = WPMUDEV_Dashboard::$api->get_membership_projects();
-
-			// Plan includes Forminator.
-			if ( ( 'unit' === $status && ! in_array( 2097296, $projects, true ) ) || ( 'single' === $status && 2097296 !== $projects ) ) {
-				$status = 'upgrade';
-			} elseif ( 'free' === $status && WPMUDEV_Dashboard::$api->has_key() ) {
-				// Check if API key is available but status is free, then it's expired.
-				$status = 'expired';
-			}
-		} else {
-			$status = 'free';
-		}
+function forminator_can_install_pro() {
+	// Dashboard is active.
+	if ( class_exists( 'WPMUDEV_Dashboard' ) && method_exists( WPMUDEV_Dashboard::$upgrader, 'user_can_install' ) ) {
+		$has_access = WPMUDEV_Dashboard::$upgrader->user_can_install( 2097296, true );
+	} else {
+		$has_access = false;
 	}
 
 	/**
 	 * Filter to modify WPMUDEV membership status.
 	 *
 	 * @since 1.13
+	 * @since 1.18.2 Deprecated forminator_wpmudev_membership_status filter
 	 *
 	 * @param string $status Status.
 	 */
-	return apply_filters( 'forminator_wpmudev_membership_status', $status );
+	$has_access = apply_filters_deprecated(
+		'forminator_wpmudev_membership_status',
+		array( $has_access ),
+		'1.18.2',
+		'forminator_wpmudev_can_install_pro'
+	);
+
+	return apply_filters( 'forminator_wpmudev_can_install_pro', $has_access );
 }
 
 /**

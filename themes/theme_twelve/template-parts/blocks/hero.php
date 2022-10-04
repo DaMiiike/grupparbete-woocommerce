@@ -13,7 +13,7 @@
 
     if ($image) {
         $image_id = $image['id'];
-        echo wp_get_attachment_image($image_id, 'large');
+        echo wp_get_attachment_image($image_id, 'full');
     }
 
     ?>

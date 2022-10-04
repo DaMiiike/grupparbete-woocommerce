@@ -1,13 +1,20 @@
-det här är index.php
+<?php get_header(); ?>
+
 <?php
-if ( have_posts() ) :
-    while ( have_posts() ) : the_post();
+if ( have_posts() ) : ?>
 
-       the_content(); 
+   <?php while ( have_posts() ) : the_post(); ?>
+
+       <?php get_template_part('template-parts/posts-block'); ?>
 
 
-    endwhile;
-endif;
+    <?php endwhile; ?>
+
+    <?php wp_reset_postdata(); ?>
+
+<?php endif; ?>
+
+
+<?php get_footer();
+
 ?>
-
-<?php get_footer();?>

@@ -315,7 +315,6 @@ class Forminator_Admin {
 	 *
 	 * @return bool
 	 * @since 1.9
-	 *
 	 */
 	public function has_old_stripe_forms() {
 		$forms = Forminator_Form_Model::model()->get_models_by_field_and_version( 'stripe-1', '1.9-alpha.1' );
@@ -344,17 +343,14 @@ class Forminator_Admin {
 		}
 
 		// Show the notice only to users who can do something about this and who are members.
-		if ( ! self::user_can_update_plugins() || ! in_array( forminator_membership_status(), array(
-				'full',
-				'upgrade'
-			), true ) ) {
+		if ( ! self::user_can_update_plugins() || ! forminator_can_install_pro() ) {
 			return;
 		}
 
 		$url  = add_query_arg(
-			        array( 'page' => 'wpmudev-plugins' ),
-			        network_admin_url( 'admin.php' )
-		        ) . '#pid=2097296';
+            array( 'page' => 'wpmudev-plugins' ),
+            network_admin_url( 'admin.php' )
+        ) . '#pid=2097296';
 		$link = '<a type="button" href="' . esc_url( $url ) . '" target="_self" class="button button-primary">' . esc_html__( 'Upgrade' ) . '</a>';
 
 		$username = forminator_get_current_username();
@@ -730,7 +726,6 @@ class Forminator_Admin {
 	 *
 	 * @return mixed
 	 * @since 1.13
-	 *
 	 */
 	public function add_plugin_action_links( $links ) {
 		// Settings link.
@@ -740,14 +735,16 @@ class Forminator_Admin {
 		// Documentation link.
 		$action_links['docs'] = '<a href="' . forminator_get_link( 'docs', 'forminator_pluginlist_docs' ) . '" aria-label="' . esc_attr( __( 'Docs', 'forminator' ) ) . '" target="_blank">' . esc_html__( 'Docs', 'forminator' ) . '</a>';
 
-		// WPMUDEV membership status.
-		$membership = forminator_membership_status();
+		// Check if the current logged-in member has access Forminator Pro.
+		$can_install_pro = forminator_can_install_pro();
 
 		// Upgrade or Renew links.
-		if ( ! FORMINATOR_PRO || 'upgrade' === $membership ) {
-			$action_links['upgrade'] = '<a href="' . forminator_get_link( 'plugin', 'forminator_pluginlist_upgrade' ) . '" aria-label="' . esc_attr( __( 'Upgrade to Forminator Pro', 'forminator' ) ) . '" style="color: #8D00B1;" target="_blank">' . esc_html__( 'Upgrade', 'forminator' ) . '</a>';
-		} elseif ( ( 'expired' === $membership || 'free' === $membership ) && ! isset( $_SERVER['WPMUDEV_HOSTED'] ) ) {
-			$action_links['renew'] = '<a href="' . forminator_get_link( 'plugin', 'forminator_pluginlist_renew' ) . '" aria-label="' . esc_attr( __( 'Upgrade 35% OFF Sale', 'forminator' ) ) . '" style="color: #8D00B1;" target="_blank">' . esc_html__( 'Upgrade 35% OFF Sale', 'forminator' ) . '</a>';
+		if ( ! FORMINATOR_PRO ) {
+			if ( $can_install_pro ) {
+				$action_links['upgrade'] = '<a href="' . forminator_get_link( 'plugin', 'forminator_pluginlist_upgrade' ) . '" aria-label="' . esc_attr( __( 'Upgrade to Forminator Pro', 'forminator' ) ) . '" style="color: #8D00B1;" target="_blank">' . esc_html__( 'Upgrade', 'forminator' ) . '</a>';
+			} else {
+				$action_links['renew'] = '<a href="' . forminator_get_link( 'plugin', 'forminator_pluginlist_renew' ) . '" aria-label="' . esc_attr( __( 'Upgrade 35% OFF Sale', 'forminator' ) ) . '" style="color: #8D00B1;" target="_blank">' . esc_html__( 'Upgrade 35% OFF Sale', 'forminator' ) . '</a>';
+			}
 		}
 
 		return array_merge( $action_links, $links );
@@ -762,7 +759,6 @@ class Forminator_Admin {
 	 *
 	 * @return array
 	 * @since 1.13
-	 *
 	 */
 	public function plugin_row_meta( $links, $file, $plugin_data ) {
 		if ( FORMINATOR_PLUGIN_BASENAME === $file ) {
