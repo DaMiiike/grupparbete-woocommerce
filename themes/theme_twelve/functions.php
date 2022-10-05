@@ -91,6 +91,15 @@ function my_acf_init_block_type()
       'category'          => 'formatting',
       'keywords'          => array('enviroment link'),
     ));
+
+    acf_register_block_type(array(
+      'name'              => 'about us',
+      'title'             => __('About us'),
+      'description'       => __('Block for about us page '),
+      'render_template'   => 'template-parts/blocks/about-us.php',
+      'category'          => 'formatting',
+      'keywords'          => array('about us'),
+    ));
   }
 };
 
@@ -182,3 +191,24 @@ function custom_post_type() {
 }
 add_action( 'init', 'custom_post_type', 0 );
 
+// Hook to display free shipping above 
+
+
+add_action( 'woocommerce_before_cart', 'wc_add_notice_free_shipping' );
+
+function wc_add_notice_free_shipping() {
+           
+           $free_shipping_settings = get_option('woocommerce_free_shipping_1_settings');
+           $amount_for_free_shipping = $free_shipping_settings['min_amount'];
+
+           $cart = WC()->cart->subtotal;
+           $remaining = $amount_for_free_shipping - $cart;
+
+           if( $amount_for_free_shipping > $cart ){
+               $notice = sprintf( "Add %s worth more products to get free shipping", wc_price($remaining));
+               wc_print_notice( $notice , 'notice' );
+           }
+            
+}
+
+?>
