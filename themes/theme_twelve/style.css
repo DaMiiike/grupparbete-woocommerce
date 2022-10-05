@@ -72,6 +72,7 @@ div.menu-footer-container ul {
   list-style-image: none;
   display:flex;   
   flex-direction: column-reverse;
+ 
 }
 div.menu-footer-container li a{
   padding: 0px 20px 0px 0px;
@@ -111,6 +112,7 @@ div.footer-menu-two ul {
   padding-top: 50px;
   justify-content: center;
   justify-content: space-around;
+  
   
 }
 
@@ -172,4 +174,20 @@ text-decoration: none;
 color: whitesmoke;
 font-weight: bold;
 
+}
+
+/* Styling Store page */
+
+.stores{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex: 0 0 33.333333%;
+  
+}
+.store-container{
+  border: 2px solid lightblue;
+  width: 300px;height: 300px;
+  margin: 0px 100px 100px 0px;
+  
 }

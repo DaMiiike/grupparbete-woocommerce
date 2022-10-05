@@ -5,27 +5,40 @@
 get_header(); ?>
 
 
-<h1><?php the_title(); ?></h1>
+<h1 class="store-title"><?php the_title(); ?></h1>
 
-<div class="stores-group">
-    <?php
-    // Check rows existexists.
-    if (have_rows('stores', 'option')) : ?>
+<div class="stores">
 
-
-        <?php while (have_rows('stores', 'option')) : the_row(); ?>
-
-            <li class="stores-fields">
-
-                <?php the_sub_field('address'); ?>
-
-            </li>
+        <?php if(have_rows('stores')):?>
 
 
-        <?php endwhile; ?>
+            <?php
+            while( have_rows('stores')): the_row();
 
-    <?php endif; ?>
-</div>
+            $store_name = get_sub_field('store_name');
+            $phone_number = get_sub_field('phone_number');
+            $address = get_sub_field('address');
+            $opening_hours = get_sub_field('opening_hours');
+            ?>
+
+            <div class="store-container">
+
+              <p class="store-name"><?php echo $store_name;?></p>  
+               <p class="store-number"><?php echo $phone_number;?></p> 
+              <p class="store-address"><?php echo $address;?></p>  
+              <p class="store-hours"><?php echo $opening_hours;?></p>  
+            
+        </div>
+
+            <?php endwhile;?>
+
+
+        <?php endif;?>
+
+
+
+
+<divl>
 
 
 <?php
