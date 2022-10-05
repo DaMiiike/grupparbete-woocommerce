@@ -178,16 +178,46 @@ font-weight: bold;
 
 /* Styling Store page */
 
+.store-title{
+  text-align: center;
+  font-weight: lighter;
+  padding: 40px;
+  background-color:#BFC7C7;
+}
 .stores{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   flex: 0 0 33.333333%;
+  background-color:#BFC7C7;
+  
   
 }
 .store-container{
   border: 2px solid lightblue;
+  background-color: whitesmoke;
   width: 300px;height: 300px;
-  margin: 0px 100px 100px 0px;
+  margin: 20px 100px 100px 0px;
+  padding:15px;
+ 
   
+}
+
+.store-name{
+  font-weight: bolder;
+  margin-bottom: 50px;
+}
+
+.store-number{
+  font-weight: 300;
+}
+
+.store-address{
+  font-weight: 300;
+}
+
+.store-hours{
+font-weight: 300;
+margin-top: 30px;
+max-width: 110px;
 }
