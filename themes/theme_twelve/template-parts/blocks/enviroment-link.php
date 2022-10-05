@@ -13,7 +13,7 @@
         <?php
         $link = get_field('enviroment_link');
         if ($link) : ?>
-            <a class="button" href="<?php echo esc_url($link); ?>">Continue Reading</a>
+            <a class="enviroment-button" href="<?php echo esc_url($link); ?>">Continue Reading</a>
         <?php endif; ?>
     </div>
 

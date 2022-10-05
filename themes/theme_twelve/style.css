@@ -30,11 +30,11 @@ Version: 1.0
 /* Styling navbar */
 
 .top-navbar{
-  /*position: absolute;
-  float: right; */ /* Use when hero is visible*/ 
+/*   float: right; */ /* Use when hero is visible*/  
   display: flex;
   flex-direction: row;
-  padding:  20px ;
+  padding:  20px;
+  /* position: absolute; top:0; left:0 */
 }
 
 .menu-main-menu-container{
@@ -42,7 +42,6 @@ Version: 1.0
   padding: 0;
   margin: 0;
   
-
 }
 
  ul#menu-main-menu.menu{
@@ -146,4 +145,31 @@ div.footer-menu-two ul {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+/* Styling enviroment block */
+
+.enviroment-container {
+background-color: lightblue;
+color: whitesmoke;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.enviroment-heading{
+padding: 30px;
+font-weight: lighter;
+}
+
+.enviroment-text{
+  max-width: 50%;
+  padding: 40px;
+}
+
+.enviroment-link a{
+text-decoration: none;
+color: whitesmoke;
+font-weight: bold;
+
 }
