@@ -225,4 +225,14 @@ max-width: 110px;
 .posts-block {
   display: flex;
   border: 2px solid salmon;
+  max-width: 50%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Custom styling checkout */
+
+a.checkout-button.button.alt.wc-forward{
+  background-color: lightskyblue;
+  max-width: 100px;
 }
