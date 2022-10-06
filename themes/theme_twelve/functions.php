@@ -205,7 +205,7 @@ function wc_add_notice_free_shipping() {
            $remaining = $amount_for_free_shipping - $cart;
 
            if( $amount_for_free_shipping > $cart ){
-               $notice = sprintf( "Add %s worth more products to get free shipping", wc_price($remaining));
+               $notice = sprintf( "Add %s worth more products to get free shipping! DON'T SNOOZE ON THIS :P", wc_price($remaining));
                wc_print_notice( $notice , 'notice' );
            }
             
