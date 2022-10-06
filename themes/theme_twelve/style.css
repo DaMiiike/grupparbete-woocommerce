@@ -234,5 +234,17 @@ max-width: 110px;
 
 a.checkout-button.button.alt.wc-forward{
   background-color: lightskyblue;
-  max-width: 100px;
+  max-width: 120px;
+}
+
+.cart-collaterals{
+  justify-content: center;
+}
+
+h2.cart-totals{
+  color: blue;
+}
+
+.the-page-content{
+  justify-content: center;
 }

@@ -22,6 +22,7 @@ if ( $max_value && $min_value === $max_value ) {
 	<div class="quantity hidden">
 		<input type="hidden" id="<?php echo esc_attr( $input_id ); ?>" class="qty" name="<?php echo esc_attr( $input_name ); ?>" value="<?php echo esc_attr( $min_value ); ?>" />
 	</div>
+	
 	<?php
 } else {
 	/* translators: %s: Quantity. */
@@ -46,6 +47,8 @@ if ( $max_value && $min_value === $max_value ) {
 			autocomplete="<?php echo esc_attr( isset( $autocomplete ) ? $autocomplete : 'on' ); ?>"
 		/>
 		<?php do_action( 'woocommerce_after_quantity_input_field' ); ?>
+
+		
 	</div>
 	<?php
 }

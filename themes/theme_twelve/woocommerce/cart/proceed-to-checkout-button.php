@@ -6,5 +6,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="checkout-button button alt wc-forward">
-	<?php esc_html_e( 'Checkout', 'woocommerce' ); ?>
+	<?php esc_html_e( 'Checkout :)', 'woocommerce' ); ?>
 </a>
