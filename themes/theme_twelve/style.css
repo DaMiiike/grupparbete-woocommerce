@@ -5,7 +5,7 @@ Author: Anna, Moises & Michael
 Version: 1.0
 */
 
-/* .posts {
+.posts {
   width: 100%;
   height: auto;
   display: grid;
@@ -19,7 +19,6 @@ Version: 1.0
   border-radius: 20px;
   padding: 20px;
 }
- */
 
  * {
   font-family: 'Inter Tight', sans-serif;
@@ -247,4 +246,12 @@ h2.cart-totals{
 
 .the-page-content{
   justify-content: center;
+}
+
+.woocommerce-info{
+  background-color: hotpink;
+  color: whitesmoke;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 400;
 }

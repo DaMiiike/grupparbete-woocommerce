@@ -1,3 +1,5 @@
+<div class="about-us-container">
+
 <?php
     $image = get_field('about_image');
 
@@ -7,5 +9,11 @@
         echo wp_get_attachment_image($image_id, 'large');
     }
 
-    $sub_heading = get_field('sub_heading');
     ?>
+
+<h2><?php the_field('about_sub_heading'); ?></h2>
+
+    <?php the_field('about_article'); ?>
+
+</div>
+

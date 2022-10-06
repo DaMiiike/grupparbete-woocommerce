@@ -1,0 +1,6 @@
+2022-10-06T08:42:06+00:00 CRITICAL syntax error, unexpected end of file in /Users/annas/Desktop/grupparbete/wp-content/themes/theme_twelve/template-parts/blocks/about-us.php on line 15
+
+2022-10-06T08:45:12+00:00 CRITICAL syntax error, unexpected '<' in /Users/annas/Desktop/grupparbete/wp-content/themes/theme_twelve/template-parts/blocks/about-us.php on line 11
+
+2022-10-06T08:50:55+00:00 CRITICAL syntax error, unexpected '<', expecting end of file in /Users/annas/Desktop/grupparbete/wp-content/themes/theme_twelve/search.php on line 5
+
